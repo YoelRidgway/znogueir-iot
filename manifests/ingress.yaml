@@ -4,9 +4,9 @@ metadata:
   name: playground-app
   namespace: dev
 spec:
+  ingressClassName: traefik
   rules:
-  - host: localhost  # Works fine!
-    http:
+  - http:  # No host = catch-all
       paths:
       - path: /
         pathType: Prefix
@@ -15,3 +15,4 @@ spec:
             name: playground-app
             port:
               number: 8888
+
